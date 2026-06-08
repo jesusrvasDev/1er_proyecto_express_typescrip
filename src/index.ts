@@ -2,10 +2,13 @@ import express from 'express'
 import server from './server'
 
 const app=express()
-const port=process.env.PORT || 4000
+const port= process.env.PORT || 4000
 
 server.listen(port,()=>{
-    console.log("Estoy repasando nodeJS, Servidor funcionando por el puerto 4000")
+    console.log("servidor corriendo en el puerto",port)
+    
+
 })
 
+ 
 

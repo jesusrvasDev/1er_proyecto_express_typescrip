@@ -149,7 +149,7 @@ Una vez separado el archivo del servidor, para vincularlo al archivo donde estan
     
 **import server from './server'** : El nombre de la importacion es irrelevante ya que agregamos export default en la configuracion del servidor 
 
-# 7. CREANDO UN ARCHICVO DE RAUTIG (VIDEO 17)
+# 7. CREANDO UN ARCHICVO DE ROUTING (VIDEO 17)
 
 Un archicvo de rauter es un archivo .ts con todas las rutas, se utiliza una funcion o libreria de express , por lo que no se crea otra instancia de express si no que solo se importa la libreria **Router** es decir **import {Router} from 'Expresss'** , esto se hace en el archivo **router.ts** que vas a crear , peparando asi las rutas y la creacion del servidor, que inicialmente se habia creado asi cuando se inicio el curso. 
 
@@ -169,7 +169,13 @@ Cuando usamos la peticion post en el router , la pagina no se puede vizualizar e
 
 Como hasta este punto aun no se va a crear la aplicacion de Reac (implicaria crear el formulario y todo lo demas), por eso debemos simular las peticiones tipo post que enviaremos al navegador, para ello podemos usar postman, insomnia o thunder client 
 
-# 9. USANDO POSTMAN PARA SIMULAR PETICIONES POST (Video 19) 
+# 9. HABILITAR LECTURA DE DATOS EN EL SERVIDOR 
+
+Express no viene configurado por defecto para poder leer o recuperar lectura de datos, esta propiedad hay que habilitarla con express.json en el archivo de configuración del servidor **server.ts** y se hace con la linea de codigo
+
+**app.use(express.jason())**
+
+# 10. USANDO POSTMAN PARA SIMULAR PETICIONES POST (Video 19) 
 
 Basicamente se utilizan para ahorrar tiempo y poder probar peteciones post y otras , que aunque se pueden probrar desde el navegador , nos evita todo el trabajo de crear un formulario, con la definicion de todos los campos etc, aca probamos la peticion y su posible respuesta de una vez.
 
@@ -177,8 +183,7 @@ Se utilizan herramientas como postaman, thunder client, insomnia,  para probar l
 
 - **Habilitar lectura de datos enviados al servidor:** Se debe configurar el servidor para que lea archivos **.json**. Eso se hace en el archivo **server.ts** agregando la linea **app.use(express.json())**, de esta manera se logra recuperar los datos que se envian al servidor, para vizualizarlos podemos hecer con console.log sobre resq.body y veremos los datos de la simulacion en la consola del servidor.
 
-
-# 10. QUE ES UN ORM Y PARA QUE SIRVE 
+# 11. QUE ES UN ORM Y PARA QUE SIRVE 
 
 **ORM:** Son las iniciales de *Objet Relational Mapping*. Es una tecnica mediante la cual se utiliza los datos en una base de datos como si fuesen objetos en un leguaje de programacion orientado a objetos,es decir utilizando paradigma de Programacion orientada a Objetos.
 
@@ -216,7 +221,7 @@ En **monngoos** defines modelos con la forma que tendran los datos almacenados e
 
 *nota:* Haciendo analogía con las bases de datos relacionales, lo que en Una base de datos relacional es una tabla en Mongo es una *Colección* y a lo que se le llama registro es un *Documento*
 
-## CONECTAR EL PROYECTO CON LA BASE DE DATOS 
+# 12.CONECTAR EL PROYECTO CON LA BASE DE DATOS 
 
 Para conectar el proyecto con MongoDB , se crea la base de datos en Mongo, bueno cree fue un closter , alli en la parte de seguridad de mongo te pregunta como te quieres conectar a la base de datos , para este proyecto se eligio conectarse con drivers, te da una direccion url, en la que debes cambiar los datos de usuario y contraseña, al final de esa url luego de mong.net/ " Se coloca el nombre de la base de datos con la que se va a conectar, el profesor dice en el video que si no existe mongo la crea"
 
@@ -232,6 +237,14 @@ Para que se realice la conexión a la vez que se inicie el servidor , debemos ll
 
 1. El profesor indica que el estuvo buscando en la información que arroja en el servidor **console.log(connection)**, que es la información de la conexión y señala que hay dos variables que toma de allí para generar la linea donde re-escribe la linea de código donde crea la variable **URL** , llamandola URL2
 Investigar sobre template string*
+
+# 13. AGREGANDO COLOR AL CLI 
+
+Con esta dependecia o libreria, se busca resaltar los errores producto de la ejecución del código en la terminal, inclusive cuando este desplegada en producción , por ello es que se agrega como dependencia de producción.
+
+Para usar la libreria se usa el metodo colors, seguido del punto, es decir , **colors.** automticamente apareceran los colores disponibles, bagrund , tipos de letra , etc.. las cuales se aplicaran al texto que este dentro del parentesis con argumento del console.log.
+
+En profesor recomienda colocar las dependencias de node_modules en las primeras lineas de los imports, luego las depedecias de modulos de archivos locales.
 
 
 

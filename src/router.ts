@@ -11,7 +11,6 @@ router.post('/Auth/register',(resq,res)=>{
 })
 
 
-
 router.get('/',(resq,res)=>{
     res.send('En esta página va el Curriculum Jesús Rivas, ')
     console.log("Publicando curriculun de Jesus Rivas")
