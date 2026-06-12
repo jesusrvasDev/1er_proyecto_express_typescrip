@@ -199,9 +199,9 @@ La sintaxis **SQL** y la que utiliza el **ORM** son parecidas pero no son iguale
 
 **Ejemplo:**  
 
- **- SQL:** INSERT INTO 'table'('name') VALUES ('Jesus')
+- **- SQL:** INSERT INTO 'table'('name') VALUES ('Jesus')
  
- **- ORM:** User.create({name:'Jesus'})
+- **- ORM:** User.create({name:'Jesus'})
 
  Otra gran ventaja es que con el ORM usamos el mismo lenguaje de programacion que usamos para desarrollar la aplicacion, que que es javascript. 
 
@@ -257,14 +257,14 @@ Ahora para poder agregar datos a la base de datos , es necesario definir el mode
 
 El schema se refiere a la forma que van a tener los datos, estructura, en otros ORM se define el schema junto con el modelo, pero en mongoose se define primero el schema y luego se le asocia el modelo 
 
-En primer lugar creas una carpeta en la carpeta del código fuente **src**, en esa carpetas guardaras los modelos que se creen, la carpeta la llamamos **Models**.
+- En primer lugar creas una carpeta en la carpeta del código fuente **src**, en esa carpetas guardaras los modelos que se creen, la carpeta la llamamos **Models**.
 
-En segundo lugar creas un archivo con el nombre del modelo , la convención dice que es con la primera letra en mayuscula y el resto en minuscula, por ejemplo , **Users.ts**
+- En segundo lugar creas un archivo con el nombre del modelo , la convención dice que es con la primera letra en mayuscula y el resto en minuscula, por ejemplo , **Users.ts**
 
-En tercer lugar importas mongoose al archivo donde vas a crear el modelo
+- En tercer lugar importas mongoose al archivo donde vas a crear el modelo
 
-En cuarto lugar , creas el schema al creando el objeto schema:
-**const userSchema = new schema { }**
+- En cuarto lugar , creas el schema al creando el objeto schema:
+  **const userSchema = new schema { }**
 
 En quinto lugar , vas definiendo el esquema de los datos dentro de las llaves , que son como un objeto de javascript. Nombre de los campos, tipos de datos, sin son obligatorios, etc . Un enfoque muy importante es el de la Orientación a Objetos, es decir, por ejemplo si definimos el Modelo **Users.ts** dentro de esa colección estaran todos los objetos y cada campo son atributos de esos objetos.
 
@@ -280,7 +280,7 @@ Si luego de la variable o fucion colocas dos puntos , podrás exigir que la vari
 
 Por ejemplo: 
 
-**let x : string = 10** , la "x" se subraya en rojo indicando un error y ademas si se pocisiona el cursor sobre la "x", aparecera retroalimientacion en la que te explica por que se genera error y te sugiere que hacer para eliminar ese error.
+- **let x : string = 10** , la "x" se subraya en rojo indicando un error y ademas si se pocisiona el cursor sobre la "x", aparecera retroalimientacion en la que te explica por que se genera error y te sugiere que hacer para eliminar ese error.
 
 ### Que son los Primitive Types:
 Son los tipos de datos que typescript soporta de forma nativa. Estos son: number, string, boolean, null, undefined
@@ -293,6 +293,18 @@ Dos de las caracteristicas que más se utilizan en TypeScript son Types e interf
 
 Es una forma de crear una estructura o agrupar propiedades de un objeto
 
-Express ya viene con una serie de Types ya definidos que puedes utilizar 
+Express ya viene con una serie de Types ya definidos que puedes utilizar
+
+Para crear el type se procede mediante la sintaxys:
+
+- **type nombredelType = {Aqui van los tipos de datos }** 
+
+Para crear las interfece se procede mediante la sintaxys
+
+- **interface nombredelIterface {Aqui van los tipos de datos }**  // sin el signo '='
+
+En coclusion los types fuerzan tipos de datos a estructura de datos mas complejos. 
+
+# 17. UTILITY TYPES EN TYPESCRIPT, HERENCIA Y MAS
 
     
