@@ -242,13 +242,57 @@ Investigar sobre template string*
 
 Con esta dependecia o libreria, se busca resaltar los errores producto de la ejecución del código en la terminal, inclusive cuando este desplegada en producción , por ello es que se agrega como dependencia de producción.
 
-Para usar la libreria se usa el metodo colors, seguido del punto, es decir , **colors.** automticamente apareceran los colores disponibles, bagrund , tipos de letra , etc.. las cuales se aplicaran al texto que este dentro del parentesis con argumento del console.log.
+Para usar la libreria se usa el metodo colors, seguido del punto, es decir , **colors.** automticamente apareceran los colores disponibles, bagrund , tipos de letra , etc.. las cuales se aplicaran al texto que este dentro del parentesis del método colors que se creo(), así se va anidado los metodos a los que se les aplicara formato en el argumento del console.log.
+
+#### Ejemplo:  
+**console.log(colors.bgred.white(error.message))**
 
 En profesor recomienda colocar las dependencias de node_modules en las primeras lineas de los imports, luego las depedecias de modulos de archivos locales.
 
+# 14. CREANDO UN SCHEMA PARA LA BASE DE DATOS
 
+Aneteriormente creamos una conexión a una base de datos de mongo que aún no tiene estructura, tablas, registros, en el caso de Mongo colecciones y documentos. Usamos postman para probar que el servidor se escontraba recibiendo solicitudes desde el cliente(navegador) con información tipo json en el cuerpo de esas solicitudes 
 
- 
+Ahora para poder agregar datos a la base de datos , es necesario definir el modelo o modelos de los datos , para el caso de mongo y el tipo de conexión que establecimos (drivers) usamos el ODM Mongoose, en este ODM es necesario en primer lugar crear el Schema y luego asociar ese schema al modelo que vamos a usar
 
+El schema se refiere a la forma que van a tener los datos, estructura, en otros ORM se define el schema junto con el modelo, pero en mongoose se define primero el schema y luego se le asocia el modelo 
+
+En primer lugar creas una carpeta en la carpeta del código fuente **src**, en esa carpetas guardaras los modelos que se creen, la carpeta la llamamos **Models**.
+
+En segundo lugar creas un archivo con el nombre del modelo , la convención dice que es con la primera letra en mayuscula y el resto en minuscula, por ejemplo , **Users.ts**
+
+En tercer lugar importas mongoose al archivo donde vas a crear el modelo
+
+En cuarto lugar , creas el schema al creando el objeto schema:
+**const userSchema = new schema { }**
+
+En quinto lugar , vas definiendo el esquema de los datos dentro de las llaves , que son como un objeto de javascript. Nombre de los campos, tipos de datos, sin son obligatorios, etc . Un enfoque muy importante es el de la Orientación a Objetos, es decir, por ejemplo si definimos el Modelo **Users.ts** dentro de esa colección estaran todos los objetos y cada campo son atributos de esos objetos.
+
+Finalmente, para definir el modelo se usa un método de mongoose ya llamado **model** el cual recibe dos argumentos , El nombre del modelo que estas creando  y el nombre de Schema que va a tener asociado.
+
+Todo lo anterios no es código de Javascript , es código de mongoDB
+
+# 15. INFERENCIA Y PRIMITIVE TYPES EN TYPESCRIPT 
+
+Cuando colocamos el cursor sobre la inicialización de una variable, veremos con typescript nos realiza lo que se llama INFERENCIA, es decir de acuerdo a lo que esta escrito en el código el infiere los tipos de datos primtivos que puede tomar la variable en la que esta puesto el cursor.
+
+Si luego de la variable o fucion colocas dos puntos , podrás exigir que la variable o funcion tome determinado tipo de dato, que puede coincidir o no con lo que infiere typescript, de alli que el código pódria marcar un error y dejar de funcionar.
+
+Por ejemplo: 
+
+**let x : string = 10** , la "x" se subraya en rojo indicando un error y ademas si se pocisiona el cursor sobre la "x", aparecera retroalimientacion en la que te explica por que se genera error y te sugiere que hacer para eliminar ese error.
+
+### Que son los Primitive Types:
+Son los tipos de datos que typescript soporta de forma nativa. Estos son: number, string, boolean, null, undefined
+
+En el caso de los arreglos hay una sintaxys especial para crearlos, no exixten como Primitve Type.
+
+# 16. TYPES E INTERFACE EN TypeScript
+
+Dos de las caracteristicas que más se utilizan en TypeScript son Types e interface. Ambas pueden ser utilizadas incluso de forma intercambiable, hay muy poca diferencias entre ambos y en la comunidad vas a encontrar ejemplos con ambos.
+
+Es una forma de crear una estructura o agrupar propiedades de un objeto
+
+Express ya viene con una serie de Types ya definidos que puedes utilizar 
 
     
