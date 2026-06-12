@@ -16,12 +16,16 @@ server.listen(port,()=>{
 // Prueba de tipo de datos de usuario definido en el modelo de usuario
 // Definiendo el Type 
 
-interface UserType  {
+type  UserType =  {
     name: string;
     email: string;
     password: string;
     edad?: number;     // La edad es opcional
 }
+
+interface userfull extends UserType {
+    foto: string;
+}   
 
 let user : UserType= {
     name: "John Doe",
@@ -37,5 +41,11 @@ let user : UserType= {
     edad: 30
 }
 
-
+    let user3 :userfull= {
+    name: "Maria Garcia",
+    email: "maria@example.com",
+    password: "password789",
+    edad: 28,
+    foto: "https://example.com/foto.jpg"
+}
 

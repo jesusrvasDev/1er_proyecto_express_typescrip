@@ -307,4 +307,42 @@ En coclusion los types fuerzan tipos de datos a estructura de datos mas complejo
 
 # 17. UTILITY TYPES EN TYPESCRIPT, HERENCIA Y MAS
 
-    
+La idea de esta clase es ver algunas diferencias entre interface y Type.
+
+Se plantea el caso en el que tenemos que agregar un atributo o campo, a la estructura de tipos de datos que ya teniamos creada para un  modelo de datos, digamos que necesitamos crear un campo llamado image, que almacena archivo .jpg
+
+Tenemos: 
+
+- interface produc {
+  nombre = string
+  disponible = true
+  cantidad = number
+} 
+
+Si tengo dos productos
+
+- PRODUCTO1
+
+let producto1 ={
+  nombre = franela
+  disponible = true
+  cantidad = 
+}
+
+- PRODUCTO2
+
+let producto1 ={
+  nombre = gorra
+  disponible = true
+  cantidad = 15
+}
+
+Si queremos agregar un producto con un nuevo atributo adicional al PRODUCTO2, podriamos repetir el codigo y agregar el atributo, seguramnte va a funcionar pero estamos agregando codigo innecesario, en este caso se usa la herencia.
+
+Para que este producto herede las propiedades de los productos anteriores, se crea otro Interface o type solo con el tipo de dato del atributo que vamos a agregar, y para asociarlo a las propiedades anteriores usamos la palabra extends 
+
+**type fullProduct = {**
+  **foto= string** 
+**}**
+
+Para aplicarlo al producto seria 
