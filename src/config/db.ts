@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-import 'colors'
+import colors from "colors";
 
-//console.log(process.env.MONGO_URI) 
+//console.log(process.env.MONGO_URI)
 
-export const connectBD= async()=>{
+export const connectBD = async () => {
     try {
                 
           const {connection} = await mongoose.connect(process.env.MONGO_URI) 
@@ -13,9 +13,10 @@ export const connectBD= async()=>{
           console.log('MongoDB conectado en:', url)
           //console.log("La conexion es:",connection)
 
+
     }catch (error) {
 
-          console.log("El error es:",error)     
+          console.log(colors.red(`El error es:"), ${error}`))     
     }
 } 
 
