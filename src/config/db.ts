@@ -10,7 +10,9 @@ export const connectBD = async () => {
           
           const url= `${connection.host}:${connection.port}`
 
-          console.log('MongoDB conectado en:', url)
+          console.log('MongoDB conectado en:'.bgMagenta
+            
+            , url.bgGreen)
           //console.log("La conexion es:",connection)
 
 
