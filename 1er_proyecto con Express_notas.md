@@ -312,37 +312,100 @@ La idea de esta clase es ver algunas diferencias entre interface y Type.
 Se plantea el caso en el que tenemos que agregar un atributo o campo, a la estructura de tipos de datos que ya teniamos creada para un  modelo de datos, digamos que necesitamos crear un campo llamado image, que almacena archivo .jpg
 
 Tenemos: 
+- Interface 
 
-- interface produc {
-  nombre = string
-  disponible = true
-  cantidad = number
+interface produc {
+
+  nombre : string
+
+  disponible : true
+
+  cantidad : number
+
 } 
 
 Si tengo dos productos
 
 - PRODUCTO1
 
-let producto1 ={
-  nombre = franela
-  disponible = true
-  cantidad = 
+let producto1 = {
+
+  nombre : franela
+
+  disponible : true
+  cantidad : 65
+
 }
 
 - PRODUCTO2
 
-let producto1 ={
-  nombre = gorra
-  disponible = true
-  cantidad = 15
+let producto2 = {
+
+  nombre : gorra
+
+  disponible : true
+
+  cantidad : 15
+
 }
 
 Si queremos agregar un producto con un nuevo atributo adicional al PRODUCTO2, podriamos repetir el codigo y agregar el atributo, seguramnte va a funcionar pero estamos agregando codigo innecesario, en este caso se usa la herencia.
 
-Para que este producto herede las propiedades de los productos anteriores, se crea otro Interface o type solo con el tipo de dato del atributo que vamos a agregar, y para asociarlo a las propiedades anteriores usamos la palabra extends 
+Para que este producto herede las propiedades de los productos anteriores, puedes crear un Interface o type solo con el tipo de dato del atributo que vamos a agregar
 
-**type fullProduct = {**
-  **foto= string** 
+- **Usando Type**
+
+**type fullProduct = product & {**
+
+  **foto : string**
+
 **}**
 
-Para aplicarlo al producto seria 
+- **Usando Interface:**
+
+**interface fullproduct extends product {**
+
+  **foto:string**
+
+**}**
+
+Para aplicarlo al producto seria:
+
+let product3 : fullProduct = {
+
+  nombre : pantalon
+
+  disponible : false
+
+  cantidad : 0
+
+  foto : "image.jpg"
+
+}
+
+**Nota:** Al profesor le gusta mas el interface cuando se hereda, la palabra extends deja ver con mas claridad que fullProduct esta heredando de product.
+
+### LOOKOP TYPES (Tipo de busqueda)
+
+Otro caso de uso de TypeScript, es cuando necesitamos cambiar de base de datos, tenemos un 'id' de tipo number en una base de datos y queremos cambiar el tipo de dato a string por que por ejemplo vamos a cambiar a mongo.
+
+En este caso resulta conveniente crear una interfaces solo con la propiedad de 'id', de esta manera no debamos a gregar cambios a cada objeto, si no que por el contrario se cambia el tipo de dato en la definicion del modelo o en la interface que se creo solo con la propiedad 'id'. De esta manera ahorramos codigo y es mas facil de mantener el codigo , el ejemplo seria: 
+
+**type userId = {**
+
+ **id: UserType['id']**  // Este es el LOOKOP, busca dentro de los tipos para que indiques que tipo  quieres de los que se definieron en el Type o Interface original.
+
+**}**
+
+Como pudimos darnos cuenta , Type e interface tienen muchas cosas en comun, pueden hasta heredar propiedades de Types o interfacaes previas, ahora en que se diferencianos preguntamos y la respuesta es los Ulility Types.
+
+### UTILITY TYPES
+
+Son utilidades que solo se pueden usar usando los Types, no funciona para los interface, es una sintaxys que permite establecer tipos de datos usando busquedas en types e iterfeces anteriores.
+
+Los mas usados son:
+
+- **pick<types, key >:** Funciona como un filtro sobre el Types o Interfaces original, creando un nuevo type con las propiedades seleccionadas en el pick  
+
+
+
