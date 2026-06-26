@@ -18,5 +18,5 @@ export const connectBD= async() =>{
           console.log(colors.red(`El error es: ${error.message}`))     
     }
 } 
-
+      
 
