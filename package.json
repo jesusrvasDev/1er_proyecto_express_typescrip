@@ -1,7 +1,7 @@
 {
   "name": "1er_proyecto_express",
   "version": "1.0.0",
-  "description": "Mi primer proyecto con express, TypeScrip y MongoDB"
+  "description": "Mi primer proyecto con express, TypeScrip y MongoDB. Es el original del del curso de Udemy con Juan de la Torre" 
   ,
   "license": "ISC",
   "author": "Jesus Rivas",
