@@ -1,7 +1,8 @@
 {
   "name": "1er_proyecto_express",
   "version": "1.0.0",
-  "description": "Mi primer proyecto con express y TypeScrip",
+  "description": "Mi primer proyecto con express, TypeScrip y MongoDB"
+  ,
   "license": "ISC",
   "author": "Jesus Rivas",
   "main": "index.js",
